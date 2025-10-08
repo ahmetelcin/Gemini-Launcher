@@ -51,14 +51,3 @@ You can download the latest ready-to-use version (`setup.exe`) for Windows from 
 5. (Optional) Enable **Start with Windows** from the tray menu for auto-start.
 
 ---
-
-## 💻 Building from Source (For Developers)
-
-If you want to compile this project on your own machine, follow the steps below.
-
-### 1. Required Libraries
-
-Install dependencies:
-
-```bash
-pip install PyQt6 PyQt6-WebEngine pynput pywin32 Pillow
