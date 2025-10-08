@@ -13,8 +13,6 @@ You can download the latest ready-to-use version (`setup.exe`) for Windows from 
 
 ➡️ **[Download the Latest Release (v1.0)](https://github.com/YOUR-USERNAME/gemini-launcher/releases/latest)**  
 
-> ⚠️ Note: Don’t forget to replace `YOUR-USERNAME` in the link above with your actual GitHub username!
-
 ---
 
 ## ✨ Features
