@@ -3,15 +3,13 @@
 A simple desktop utility designed for quick and easy access to **Google Gemini**.  
 It runs in the background, resides as an icon in the system tray, and can be invoked with a global keyboard shortcut to open Gemini in an **"always on top" window**.
 
-![Gemini Launcher](https://i.imgur.com/8a1b9d5.png)
-
 ---
 
 ## 🚀 Download
 
 You can download the latest ready-to-use version (`setup.exe`) for Windows from the link below:
 
-➡️ **[Download the Latest Release (v1.0)](https://github.com/YOUR-USERNAME/gemini-launcher/releases/latest)**  
+➡️ **[Download the Latest Release (v1.0)]([https://github.com/YOUR-USERNAME/gemini-launcher/releases/latest](https://github.com/ahmetelcin/Gemini-Launcher/releases/tag/v1.0))**  
 
 ---
 
