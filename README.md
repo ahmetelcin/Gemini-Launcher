@@ -1,51 +1,125 @@
-# 🌌 Gemini Launcher v1.0
+# Gemini Launcher
 
-A simple desktop utility designed for quick and easy access to **Google Gemini**.  
-It runs in the background, resides as an icon in the system tray, and can be invoked with a global keyboard shortcut to open Gemini in an **"always on top" window**.
+A lightweight desktop launcher for Google Gemini with productivity features.
 
----
-
-## 🚀 Download
-
-You can download the latest ready-to-use version (`setup.exe`) for Windows from the link below:
-
-➡️ **[Download the Latest Release (v1.0)]([https://github.com/YOUR-USERNAME/gemini-launcher/releases/latest](https://github.com/ahmetelcin/Gemini-Launcher/releases/tag/v1.0))**  
-
----
+![Gemini Launcher](icon.png)
 
 ## ✨ Features
 
-- **Global Keyboard Shortcut**  
-  Instantly open or close the application with a global hotkey (default: `Alt+Space`).
+### Window Modes
 
-- **Always on Top**  
-  The window stays above all other windows, allowing for quick access even while working in other applications.
+- **Normal (■)** - Compact 450×700 window
+- **Wide (▬)** - Expanded 1100×700 window
+- **Maximize (□)** - Full screen with taskbar
 
-- **Persistent Session**  
-  Once you log in with your Google account, the application remembers you. No need to log in again every time.
+### Toolbar Actions
 
-- **System Tray Integration**  
-  The application runs as an icon in the Windows system tray (near the clock).
+| Button | Action                                |
+| ------ | ------------------------------------- |
+| −      | Zoom out                              |
+| +      | Zoom in                               |
+| ○      | Reset zoom                            |
+| ↻      | Refresh page                          |
+| ⤓      | Export chat to text file              |
+| ⬇/⬆    | Toggle tray mode (Alt+Tab visibility) |
+| ⚙      | Settings                              |
 
-- **Right-Click Menu**  
-  Access all functions by right-clicking the tray icon:
-  - Open the window in different sizes (Normal / Small)
-  - Reset the Gemini page (Go to Home)
-  - Open the Settings window
-  - Open the About window
-  - Enable/disable auto-start with Windows
+### Keyboard Shortcuts
 
-- **Configurable Settings**  
-  Easily change the global keyboard shortcut via the user-friendly Settings window.
+| Shortcut       | Action                                   |
+| -------------- | ---------------------------------------- |
+| `Alt+Space`    | Toggle window visibility                 |
+| `Ctrl+Shift+G` | Capture selected text and send to Gemini |
+| `F5`           | Refresh page                             |
+
+### Productivity Features
+
+- 📌 **Position Memory** - Window opens where you left it
+- 🔍 **Zoom Memory** - Remembers your preferred zoom level
+- 📋 **Clipboard Integration** - Auto-paste clipboard content
+- 🔔 **Notifications** - Get notified when Gemini responds
+- 📤 **Export Chat** - Save conversations to text files
+- 📋 **Copy Fix** - Code copy buttons work properly
+
+### System Integration
+
+- 🔲 **System Tray** - Runs in background
+- 🚀 **Start with Windows** - Optional autostart
+- 🔝 **Always on Top** - Stay above other windows (toggleable)
+
+## 📦 Installation
+
+### Option 1: Run from Source
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/GeminiLauncher.git
+cd GeminiLauncher
+
+# Create virtual environment
+python -m venv .venv
+.venv\Scripts\activate  # Windows
+# source .venv/bin/activate  # Linux/Mac
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run
+python main.py
+```
+
+### Option 2: Download Executable
+
+Download `GeminiLauncher.exe` from [Releases](https://github.com/yourusername/GeminiLauncher/releases) and run directly.
+
+## 📋 Requirements
+
+- Python 3.10+
+- PyQt6
+- PyQt6-WebEngine
+- pynput
+- pywin32 (Windows only)
+- winshell (Windows only)
+- Pillow
+
+## ⚙️ Configuration
+
+Settings are stored in `%APPDATA%\GeminiLauncher\config.ini`:
+
+```ini
+[Settings]
+hotkey = <alt>+<space>
+clipboard_hotkey = <ctrl>+<shift>+g
+autostart = false
+auto_paste_clipboard = false
+minimize_to_tray = true
+notifications_enabled = true
+
+[Window]
+width = 450
+height = 700
+x = -1
+y = -1
+zoom = 1.0
+```
+
+## 🛠️ Building Executable
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --windowed --icon=icon.ico --name="GeminiLauncher" main.py
+```
+
+The executable will be in the `dist` folder.
+
+## 📄 License
+
+MIT License - feel free to use and modify.
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first.
 
 ---
 
-## 🛠️ Installation and Usage
-
-1. Download and run the `setup.exe` file from the [Latest Release](https://github.com/YOUR-USERNAME/gemini-launcher/releases/latest).
-2. Follow the installation wizard.
-3. The application will start automatically, and its icon will appear in your system tray (bottom-right corner).
-4. Press the default hotkey `Alt+Space` to open the Gemini window.
-5. (Optional) Enable **Start with Windows** from the tray menu for auto-start.
-
----
+Made with ❤️ for Gemini users
