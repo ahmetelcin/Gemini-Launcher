@@ -1,125 +1,81 @@
 # Gemini Launcher
 
-A lightweight desktop launcher for Google Gemini with productivity features.
+A lightweight Windows desktop launcher for Google Gemini. It runs in the system tray and opens Gemini in its own window with a global hotkey. This is an independent project and isn't affiliated with Google.
 
-![Gemini Launcher](icon.png)
+![Gemini Launcher icon](icon.png)
 
-## ✨ Features
+<!-- Demo: remove this comment's markers after adding docs/demo.gif
+![Gemini Launcher demo](docs/demo.gif)
+-->
 
-### Window Modes
+## Features
 
-- **Normal (■)** - Compact 450×700 window
-- **Wide (▬)** - Expanded 1100×700 window
-- **Maximize (□)** - Full screen with taskbar
+- **Global hotkeys:** show or hide the window, or copy selected text into Gemini's input box from any app. You can change both hotkeys in Settings.
+- **Window sizes:** normal (450×700), wide (1100×700), maximized, or your saved custom size.
+- **Stays signed in:** your Gemini session is kept between launches.
+- **System tray:** closing the window hides it, and the app keeps running in the background.
+- **Tray mode:** switch between an always-on-top window and a normal window.
+- **Zoom:** adjust the page zoom and keep your level between launches.
+- **Chat export:** save the page's text to a `.txt` file.
+- **Clipboard:** optionally paste clipboard text into the input box when the window opens, and use a built-in fix for copying from the embedded page.
+- **Notifications:** optionally get a tray notification when the page content grows while the window is hidden. The app checks every 10 seconds.
+- **External links:** links outside Gemini open in your default browser.
+- **Start with Windows:** optional, for the packaged `.exe` only.
 
-### Toolbar Actions
+## Installation
 
-| Button | Action                                |
-| ------ | ------------------------------------- |
-| −      | Zoom out                              |
-| +      | Zoom in                               |
-| ○      | Reset zoom                            |
-| ↻      | Refresh page                          |
-| ⤓      | Export chat to text file              |
-| ⬇/⬆    | Toggle tray mode (Alt+Tab visibility) |
-| ⚙      | Settings                              |
+Gemini Launcher runs on Windows only.
 
-### Keyboard Shortcuts
+### Download
 
-| Shortcut       | Action                                   |
-| -------------- | ---------------------------------------- |
-| `Alt+Space`    | Toggle window visibility                 |
-| `Ctrl+Shift+G` | Capture selected text and send to Gemini |
-| `F5`           | Refresh page                             |
+Download `Gemini.Launcher.exe` from [Releases](https://github.com/ahmetelcin/Gemini-Launcher/releases) and run it.
 
-### Productivity Features
+### Run from source
 
-- 📌 **Position Memory** - Window opens where you left it
-- 🔍 **Zoom Memory** - Remembers your preferred zoom level
-- 📋 **Clipboard Integration** - Auto-paste clipboard content
-- 🔔 **Notifications** - Get notified when Gemini responds
-- 📤 **Export Chat** - Save conversations to text files
-- 📋 **Copy Fix** - Code copy buttons work properly
+You need Python 3.10 or later.
 
-### System Integration
-
-- 🔲 **System Tray** - Runs in background
-- 🚀 **Start with Windows** - Optional autostart
-- 🔝 **Always on Top** - Stay above other windows (toggleable)
-
-## 📦 Installation
-
-### Option 1: Run from Source
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/GeminiLauncher.git
-cd GeminiLauncher
-
-# Create virtual environment
+```powershell
+git clone https://github.com/ahmetelcin/Gemini-Launcher.git
+cd Gemini-Launcher
 python -m venv .venv
-.venv\Scripts\activate  # Windows
-# source .venv/bin/activate  # Linux/Mac
-
-# Install dependencies
+.venv\Scripts\activate
 pip install -r requirements.txt
-
-# Run
 python main.py
 ```
 
-### Option 2: Download Executable
+### Build an executable
 
-Download `GeminiLauncher.exe` from [Releases](https://github.com/yourusername/GeminiLauncher/releases) and run directly.
-
-## 📋 Requirements
-
-- Python 3.10+
-- PyQt6
-- PyQt6-WebEngine
-- pynput
-- pywin32 (Windows only)
-- winshell (Windows only)
-- Pillow
-
-## ⚙️ Configuration
-
-Settings are stored in `%APPDATA%\GeminiLauncher\config.ini`:
-
-```ini
-[Settings]
-hotkey = <alt>+<space>
-clipboard_hotkey = <ctrl>+<shift>+g
-autostart = false
-auto_paste_clipboard = false
-minimize_to_tray = true
-notifications_enabled = true
-
-[Window]
-width = 450
-height = 700
-x = -1
-y = -1
-zoom = 1.0
-```
-
-## 🛠️ Building Executable
-
-```bash
+```powershell
 pip install pyinstaller
-pyinstaller --onefile --windowed --icon=icon.ico --name="GeminiLauncher" main.py
+pyinstaller --onefile --windowed --icon=icon.ico --add-data "icon.ico;." --name="GeminiLauncher" main.py
 ```
 
-The executable will be in the `dist` folder.
+The executable is created in the `dist` folder.
 
-## 📄 License
+## Usage
 
-MIT License - feel free to use and modify.
+Sign in to Google in the app window the first time you use it. To quit, right-click the tray icon and select **Exit**.
 
-## 🤝 Contributing
+| Shortcut | Action |
+|---|---|
+| `Alt+Space` | Show or hide the window |
+| `Ctrl+Shift+G` | Copy the selected text into Gemini's input box |
+| `F5` | Refresh the page |
+| `Ctrl` `+` / `Ctrl` `-` / `Ctrl` `0` | Zoom in, zoom out, reset zoom |
 
-Pull requests are welcome! For major changes, please open an issue first.
+| Toolbar button | Action |
+|---|---|
+| ■ ▬ □ | Normal, wide, maximized |
+| − + ○ | Zoom out, zoom in, reset zoom |
+| ↻ | Refresh the page |
+| ⤓ | Export the chat |
+| ⬇ / ⬆ | Turn tray mode on or off |
+| ⚙ | Open Settings |
 
----
+Left-click the tray icon to show or hide the window. Right-click it for window sizes, **Go to Home (Reset)**, **Settings...**, **About...** and **Start with Windows**.
 
-Made with ❤️ for Gemini users
+Settings are stored in `%APPDATA%\GeminiLauncher\config.ini`, and browser data is stored in `%LOCALAPPDATA%\GeminiLauncher`.
+
+## License
+
+[MIT](LICENSE)
